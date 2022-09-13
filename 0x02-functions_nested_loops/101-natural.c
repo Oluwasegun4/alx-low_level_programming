@@ -1,13 +1,13 @@
 #include "main.h"
 #include <stdio.h>
 /**
-* print_sum_natural - it prints the sum of natural numbers that are
+* main - it prints the sum of natural numbers that are
 * multiples of 3 and 5
 *
 * return: void
 */
 
-void print_sum_natural(void)
+int main(void)
 {
 	int n, sum;
 
