@@ -4,7 +4,7 @@
 * main - it prints the sum of natural numbers that are
 * multiples of 3 and 5
 *
-* return: void
+* return: 0
 */
 
 int main(void)
@@ -17,4 +17,5 @@ int main(void)
 			sum += n;
 	}
 	printf("%d\n", sum);
+	return (0);
 }
