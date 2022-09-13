@@ -6,7 +6,7 @@
 * return: void
 */
 
-void print_sum_natural(void);
+void print_sum_natural(void)
 {
 	int n, sum;
 
