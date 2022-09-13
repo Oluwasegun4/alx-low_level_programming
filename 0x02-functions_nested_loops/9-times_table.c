@@ -20,10 +20,15 @@ void times_table(void)
 				_putchar((z / 10) + '0');
 				_putchar((z % 10) + '0');
 			}
-			if (m != 9)
+			if (m != 9 && z < 10)
 			{
 				_putchar(',');
 				_putchar(' ');
+				_putchar(' ');
+			}
+			else if (m != 9 && z >= 10)
+			{
+				_putchar(',');
 				_putchar(' ');
 			}
 		}
