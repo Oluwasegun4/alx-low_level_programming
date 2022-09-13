@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
 * print_sum_natural - it prints the sum of natural numbers that are
 * multiples of 3 and 5
