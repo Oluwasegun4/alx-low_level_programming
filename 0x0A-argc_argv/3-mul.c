@@ -6,18 +6,23 @@
   * @argv: argument vector
   * Return: 0 on success, 1 on error
   */
-
 int main(int argc, char *argv[])
 {
-
-	if (argc > 1)
+	if (argc == 3)
 	{
-		printf("%d\n", (atoi(argv[1]) * atoi(argv[2])));
-		return (0);
+		int i;
+		int mul = 1;
+
+		for (i = 1; i < argc; ++i)
+		{
+			mul *= atoi(argv[i]);
+		}
+		printf("%d\n", mul);
 	}
 	else
 	{
 		printf("Error\n");
 		return (1);
 	}
+	return (0);
 }
