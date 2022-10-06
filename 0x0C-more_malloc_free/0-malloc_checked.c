@@ -2,6 +2,7 @@
 /**
   * malloc_checked - this allocates a memory using malloc
   * @b: the number of memory to be allocated
+  * Return: THe string initialised
   */
 
 void *malloc_checked(unsigned int b)
@@ -9,9 +10,9 @@ void *malloc_checked(unsigned int b)
 	void *s;
 
 	 s = malloc(b);
-	 if (s == NULL)
-	 {
-		 exit(98);
-	 }
-	 return (s);
+	if (s == NULL)
+	{
+		exit(98);
+	}
+	return (s);
 }
