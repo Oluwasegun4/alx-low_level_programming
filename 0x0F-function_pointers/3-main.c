@@ -1,42 +1,46 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "3-calc.h"
 
 /**
- * main - operates two numbers.
- * @argc: argument counter.
- * @argv: argument vector.
- * Return: result, otherwise 98 for arg error, 99 for op, error 100 for divide
- * or multiply by 0
+ * main - program that perfroms simple operations
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
+ * Return: Always 0 (Success)
  */
-
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
-	int a, b, answer;
-	int (*function)(int, int);
+	int arg1, arg2, result;
+	char o;
+	int (*func)(int, int);
 
 	if (argc != 4)
 	{
-		puts("Error");
+		printf("Error\n");
 		exit(98);
 	}
 
-	if (argv[2][1] != '\0')
+	arg1 = atoi(argv[1]);
+	arg2 = atoi(argv[3]);
+
+	func = get_op_func(argv[2]);
+
+	if (!func)
 	{
-		puts("Error");
+		printf("Error\n");
 		exit(99);
 	}
 
-	function = get_op_func(*(argv + 2));
-	if (!function)
+	o = *argv[2];
+
+	if ((o == '/' || o == '%') && arg2 == 0)
 	{
-		puts("Error");
-		exit(99);
+		printf("Error\n");
+		exit(100);
 	}
 
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
-	answer = function(a, b);
-	printf("%d\n", answer);
+	result = func(arg1, arg2);
+
+	printf("%d\n", result);
+
 	return (0);
 }
